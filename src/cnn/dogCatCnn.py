@@ -99,8 +99,10 @@ plt.show()
 
 # manual testing 
 print("=========== Manual Test START ===========")
-print("DOG test: input a DOG image, expect a DOG prediction")
+
 data_folder = Path("datasets/my_images/")
+
+print("DOG test: input a DOG image, expect a DOG prediction")
 
 file_to_open_DOG = data_folder / "d001.jpg"
 
@@ -122,7 +124,7 @@ file_to_open_CAT = data_folder / "c002.jpg"
 
 f_CAT = open(file_to_open_CAT)
 
-test_image = image.load_img(os.path.realpath(f_DOG.name), target_size = (64, 64))
+test_image = image.load_img(os.path.realpath(f_CAT.name), target_size = (64, 64))
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis = 0)
 result = classifier.predict(test_image)
