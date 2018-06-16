@@ -9,17 +9,21 @@
 # Installing Keras
 # pip install --upgrade keras
 
-# Need this for plotting
-import matplotlib.pyplot as plt 
 
 # Part 1 - Building the CNN
 
-# Importing the Keras libraries and packages
+# Importing all necessary libraries and packages
 from keras.models import Sequential
 from keras.layers import Conv2D
 from keras.layers import MaxPooling2D
 from keras.layers import Flatten
 from keras.layers import Dense
+from keras.preprocessing import image
+from keras.preprocessing.image import ImageDataGenerator
+from pathlib import Path
+import os
+import numpy as np
+import matplotlib.pyplot as plt 
 
 # Initialising the CNN
 classifier = Sequential()
@@ -46,7 +50,7 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 
 # Part 2 - Fitting the CNN to the images
 
-from keras.preprocessing.image import ImageDataGenerator
+
 
 train_datagen = ImageDataGenerator(rescale = 1./255,
                                    shear_range = 0.2,
@@ -66,10 +70,10 @@ testing_set = test_datagen.flow_from_directory('datasets/testing_set',
                                             class_mode = 'binary')
 
 history = classifier.fit_generator(training_set,
-                                     steps_per_epoch = 100,
-                                     epochs = 22,
+                                     steps_per_epoch = 400,
+                                     epochs = 20,
                                      validation_data = testing_set,
-                                     validation_steps = 25)
+                                     validation_steps = 100)
 
 
 plt.figure(1)  
@@ -94,22 +98,37 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.show()  
 
 # manual testing 
-user_input = 'y'
-while user_input.lower() != 'n' and user_input != 'quit' and user_input != 'q':
-    print ("Enter a file name to test in the neural net or enter q to quit: ")
-    user_input = input("> ").lower()
-    if user_input == 'q' or user_input == 'quit':
-        break
-    try:
-        test_image = image.load_img('datasets/my_images/%s'%(user_input), target_size = (64, 64))
-        test_image = image.img_to_array(test_image)
-        test_image = np.expand_dims(test_image, axis = 0)
-        result = classifier.predict(test_image)
-        training_set.class_indices
-        if result[0][0] == 1:
-            print ("prediction: ",1)
-        else:
-            print ("prediction: ",0)
+print("=========== Manual Test START ===========")
+print("DOG test: input a DOG image, expect a DOG prediction")
+data_folder = Path("datasets/my_images/")
 
-    except:
-        print ("Bad file name. Try again.")
+file_to_open_DOG = data_folder / "d001.jpg"
+
+f_DOG = open(file_to_open_DOG)
+
+test_image = image.load_img(os.path.realpath(f_DOG.name), target_size = (64, 64))
+test_image = image.img_to_array(test_image)
+test_image = np.expand_dims(test_image, axis = 0)
+result = classifier.predict(test_image)
+training_set.class_indices
+if result[0][0] == 1:
+    print ("prediction: ","woof woof woof [A DOG]")
+else:
+    print ("prediction: ","meow meow meow [A CAT]")
+
+print("CAT test: input a CAT image, expect a CAT prediction")
+
+file_to_open_CAT = data_folder / "c002.jpg"
+
+f_CAT = open(file_to_open_CAT)
+
+test_image = image.load_img(os.path.realpath(f_DOG.name), target_size = (64, 64))
+test_image = image.img_to_array(test_image)
+test_image = np.expand_dims(test_image, axis = 0)
+result = classifier.predict(test_image)
+training_set.class_indices
+if result[0][0] == 1:
+    print ("prediction: ","woof woof woof [A DOG]")
+else:
+    print ("prediction: ","meow meow meow [A CAT]")
+print("=========== Manual Test END ===========")
