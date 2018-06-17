@@ -3,7 +3,11 @@ GENERAL INFORMATION
 
 1) ***PLEASE DO NOT*** run "preparePhotoData.py" (it is included in the repository for academic purpose ONLY) 
 The purpose of this file is to preapre the photo data.
-The results of running this file is already included in "features.pkl"
-If accidently run it, it will take more than an hour to complete running, and it will regenerate "features.pkl".
+The results of running this file is already included in "features.pkl" which is zipped.
+In order to use "feature.pkl" please see step #2.
+If accidently run it, it will take more than 2 hours to complete running, and it will regenerate "features.pkl".
 
-2)
+2) ***PLEASE UNZIP*** "features.zip" file into the current directory ( i.e. src/rnn/ )
+Due to GitHub's restriction of file size, the "features.pkl" is about 130MB.
+
+3)
