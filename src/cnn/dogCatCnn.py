@@ -73,7 +73,7 @@ history = classifier.fit_generator(training_set,
                                      steps_per_epoch = 400,
                                      epochs = 20,
                                      validation_data = testing_set,
-                                     validation_steps = 100)
+                                     validation_steps = 162)
 
 
 plt.figure(1)  
@@ -120,7 +120,7 @@ else:
 
 print("CAT test: input a CAT image, expect a CAT prediction")
 
-file_to_open_CAT = data_folder / "c002.jpg"
+file_to_open_CAT = data_folder / "c001.jpg"
 
 f_CAT = open(file_to_open_CAT)
 
