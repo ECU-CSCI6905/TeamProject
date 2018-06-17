@@ -1,0 +1,9 @@
+
+GENERAL INFORMATION
+
+1) ***PLEASE DO NOT*** run "preparePhotoData.py" (it is included in the repository for academic purpose ONLY) 
+The purpose of this file is to preapre the photo data.
+The results of running this file is already included in "features.pkl"
+If accidently run it, it will take more than an hour to complete running, and it will regenerate "features.pkl".
+
+2)
