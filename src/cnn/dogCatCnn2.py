@@ -134,3 +134,4 @@ if result[0][0] == 1:
 else:
     print ("prediction: ","meow meow meow [A CAT]")
 print("=========== Manual Test END ===========")
+
