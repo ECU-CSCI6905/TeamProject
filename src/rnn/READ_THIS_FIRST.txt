@@ -6,7 +6,7 @@ GENERAL INFORMATION
 2) ***PLEASE DO NOT*** run "preparePhotoData.py" (it is included in the repository for academic purpose ONLY) 
 The purpose of this file is to preapre the photo data.
 The results of running this file is already included in "features.pkl" which is zipped.
-In order to use "feature.pkl" please see step #2.
+In order to use "feature.pkl" please see step #3.
 If accidently run it, it will take more than 2 hours to complete running, and it will regenerate "features.pkl".
 
 3) ***PLEASE UNZIP*** "features.zip" file into the current directory ( i.e. src/rnn/ )
@@ -20,8 +20,12 @@ If accidently run it, it will take less than 5 seconds to complete running, and 
 
 5) ***RUN*** modelProgressiveLoad.py
 
-6) 
+6) ***PLEASE DO NOT*** run "generateTokenizer.py" (it is included in the repository for academic purpose ONLY)
+The purpose of this file is to generate "tokenizer.pkl" for later use.
+If accidently run it, it will take less than 1 second to complete running, and it will regenerate "tokenizer.pkl".
 
+7) ***RUN*** "test.py" to test the description generating process
+The file name can be changes to test different images.
 
 
 
