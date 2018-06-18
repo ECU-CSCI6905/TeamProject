@@ -1,7 +1,9 @@
 
 GENERAL INFORMATION
 
-1) Run the "dogCatCnn.py" to build, train, test the model
+1) ***CLONE*** the entire directory to your local workspace.
+
+2) ***RUN*** the "dogCatCnn.py" to build, train, test the model
 Changing the following parameters will lead to different runtime:
 
 steps_per_epoch = 400
