@@ -18,14 +18,18 @@ The purpose of this file is to prepare the text data.
 The results of running this file is already included in "descriptions.txt".
 If accidently run it, it will take less than 5 seconds to complete running, and it will regenerate "descriptions.txt".
 
-5) ***RUN*** modelProgressiveLoad.py
+5) ***RUN*** "modelProgressiveLoad.py"
 
-6) ***PLEASE DO NOT*** run "generateTokenizer.py" (it is included in the repository for academic purpose ONLY)
-The purpose of this file is to generate "tokenizer.pkl" for later use.
-If accidently run it, it will take less than 1 second to complete running, and it will regenerate "tokenizer.pkl".
+6) ***RUN*** "modelEvalute.py"
 
-7) ***RUN*** "test.py" to test the description generating process
-The file name can be changes to test different images.
+7) ***RUN*** "generateTokenizer.py" 
+
+8) ***RUN*** "test.py" to test the description generating process
+The image file name can be changes to test different images.
+The ".h5" file name can be changes to experience how the loss value impact the generated descriptions.
+
+After changing the parameter in "test.py" and "modelEvalute.py", MUST RERUN steps 6 - 8.
+
 
 
 
