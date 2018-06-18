@@ -28,7 +28,9 @@ If accidently run it, it will take less than 5 seconds to complete running, and 
 The image file name can be changes to test different images.
 The ".h5" file name can be changes to experience how the loss value impact the generated descriptions.
 
+NOTES:
 After changing the parameter in "test.py" and "modelEvalute.py", MUST RERUN steps 6 - 8.
+The testing images are in rnn/test_images/ directory
 
 
 
